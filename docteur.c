@@ -2,3 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+typedef struct docteur
+{
+    
+}Doc;
