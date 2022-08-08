@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "hopital.h"
+
 typedef struct patient
 {
     char nom[20];
