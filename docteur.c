@@ -50,8 +50,29 @@ void save_doctor(Doc *p)
         }   
     }
 }
-void Adding(Doc rep[], int indice)
+void adding(Doc rep[], int indice)
 {
     printf("\nEnregistrement d'un docteur....\n");
     save_doctor(&rep[indice]);
+}
+
+void view_doctor(Doc rep[], int indice)
+{
+    int i;
+    if (indice == 0)
+    {
+        printf("\nNous ne pouvons pas affiche vos contact si votre repertoire est vide .....\n");
+        printf("Merci de bien vouloire ajouter un contact...\n\n");
+    }
+    else
+    {
+        printf("\nTOUS LES DOCTEURS \n");
+        for ( i = 0; i < indice; i++)
+        {
+            printf("\n%d. %s ------- %s ---------- %s\n",i+1, rep[i].prenom , rep[i].nom, rep[i].postnom);
+            printf("20KM095 ------- %s \n", /*rep->maticule*/ rep[i].telephone);
+            // printf("%s", rep->specialisation);
+            printf("------------------------------------------------------------------\n");
+        }
+    }
 }
