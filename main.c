@@ -30,7 +30,9 @@ typedef struct patient
 int main()
 {
     Doc rep[5];
+    Pat rep_pat[5];
     int indice = 0, choix_user;
+    int indice_pat = 0;
 
     printf("\n\n######## HOPITAL HIPTOP ############");
     printf("\nMenu : \n\n");
@@ -44,11 +46,16 @@ int main()
             printf("3. Afficher tous les docteurs\n");
             printf("4. Afficher l'horaire d'un docteur\n");
             printf("5. Afficher tous les docteurs libre\n");
-            printf("6. quitter le programme....\n");
+
+            printf("\n6. Enregistrer un patient\n");
+            printf("7. Afficher tous les patients \n");
+            printf("8. Rechercher un patient \n");
+            printf("9. Ouvrir le dossier d'un patient \n");
+            printf("0. quitter le programme....\n");
 
             printf("\nVotre choix : ");
             scanf("%d", &choix_user);
-        } while (choix_user < 1 || choix_user > 6);
+        } while (choix_user < 1 || choix_user > 9);
         switch (choix_user)
         {
         case 1:
@@ -58,12 +65,19 @@ int main()
         case 3:
             view_doctor(rep , indice);
             break;
+        case 6:
+            adding_Patient(rep_pat, indice_pat);
+            indice_pat++;
+            break;
+        case 7:
+            view_Patient(rep_pat, indice_pat);
+            break;
 
         default:
             printf("Bye......\n\n");
             break;
         }
         
-    } while (choix_user != 6);
+    } while (choix_user != 0);
     
 }
